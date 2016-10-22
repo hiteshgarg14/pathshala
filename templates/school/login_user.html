@@ -1,0 +1,141 @@
+
+{% extends 'school/base.html' %}
+{%load staticfiles%}
+{% block headuser %}
+<style type="text/css">
+body { padding-bottom: 40px;
+ }
+body { padding-top: 70px; }
+.tab-group {
+list-style: none;
+padding: 0;
+margin: 0 0 40px 0;
+}
+.tab-group:after {
+content: "";
+display: table;
+clear: both;
+}
+.tab-group li a {
+display: block;
+text-decoration: none;
+padding: 15px;
+background: rgba(160, 179, 176, 0.25);
+color: #ff0;
+font-size: 20px;
+float: left;
+width: 50%;
+text-align: center;
+cursor: pointer;
+-webkit-transition: .5s ease;
+transition: .5s ease;
+}
+.tab-group li a:hover {
+background: rgb(80, 157, 200);
+color: #fff;
+}
+.tab-group .active a {
+background: rgb(61, 157, 179);
+color: #fff;
+}
+#wrapper a{
+color: #fff;
+text-decoration: none;
+}
+</style>
+{% endblock %}
+
+{% block bodycontent %}
+<!--<nav class="navbar navbar-default navbar-fixed-top">
+<header>
+    <span style="float:left;"><a href="index.php"><i class="fa fa-arrow-left" style="font-size: 20px;margin-top: 18px;"></i></a></span>
+    <a class="logo" style="margin-left: 0px;" href="index.php">TheBucketList</a>
+</header>
+</nav>-->
+    <div class="container">
+        <section>
+            <div id="container_demo" >
+                <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+
+                <div id="wrapper">
+                    <div id="login" class="animate form">
+                        <ul class="tab-group">
+                            <li class="tab active"><a href="#tologin" class="to_register">Log in </a></li>
+                            <li class="tab "><a href="#toregister" class="to_register">Sign up</a></li>
+                        </ul>
+                        <form  action="{% url 'school:login_user' %}" autocomplete="on" method="post">
+                            {% csrf_token %}
+                            <h1>Log in</h1>
+                            <p>
+                                <label for="username" class="uname" data-icon="u" > Your username </label>
+                                <input id="id_username" name="username" required="required" type="text" placeholder="Username"/>
+                            </p>
+                            <p>
+                                <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                <input id="id_password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                            </p>
+                            <p class="keeplogin">
+                                <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                                <label for="loginkeeping">Keep me logged in</label>
+                            </p>
+                            <p class="login button">
+                                <input type="submit" name="login" value="Login" />
+                            </p>
+                            <!--<label>
+                                <p><?=$vout?></p>
+                            </label>-->
+
+                        </form>
+                    </div>
+
+                    <div id="register" class="animate form">
+                        <ul class="tab-group">
+                            <li class="tab"><a href="#tologin" class="to_register">Log in </a></li>
+                            <li class="tab active"><a href="#toregister" class="to_register">Sign up</a></li>
+                        </ul>
+                        <form  autocomplete="on" method="post" action="{% url 'school:register' %}">
+                            {% csrf_token %}
+                            <h1> Sign up </h1>
+                            <p>
+                                <label for="id_first_name" class="uname" data-icon="u">Your First Name</label>
+                                <input id="id_first_name" name="first_name" required="required" type="text" placeholder="First Name"  />
+                            </p>
+                            <p>
+                                <label for="id_last_name" class="uname" data-icon="u">Your Last Name</label>
+                                <input id="id_last_name" name="last_name" required="required" type="text" placeholder="Last Name"  />
+                            </p>
+                            <p>
+                                <label for="username" class="uname" data-icon="u">Your Username</label>
+                                <input id="id_username" name="username" required="required" type="text" placeholder="Username"  />
+                            </p>
+                            <p>
+                                <label for="email" class="youmail" data-icon="e" > Your Email</label>
+                                <input id="id_email" name="email" required="required" type="email" placeholder="Email ID" {{ form.email }}
+                            </p>
+                            <p>
+                                <label for="password" class="youpasswd" data-icon="p">Your Password </label>
+                                <input id="id_password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"  />
+                            </p>
+
+                            <p class="signin button">
+                                <input type="submit" name="signup" value="Sign up"/>
+                            </p>
+                            <!--<label>
+                                <p><?=$vout?></p>
+                            </label>-->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container">
+      </div>
+    </nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/super-panel.js' %}"></script>
+{% endblock %}

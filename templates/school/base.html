@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="{% static 'school/css/demo.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'school/css/style2.css' %}" />
+    	<link rel="stylesheet" type="text/css" href="{% static 'school/css/animate-custom.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link href="{% static 'school/css/page.css' %}" rel="stylesheet" />
+		<link href="{%static 'school/css/super-panel.css' %}" rel="stylesheet" />
+		<script src="{% static 'js/super-panel.js' %}"></script>
+    </head>
+    {% block headuser %}
+    {% endblock %}
+    <body>
+        {% block bodycontent %}
+        {% endblock %}
+    </body>
+</html>

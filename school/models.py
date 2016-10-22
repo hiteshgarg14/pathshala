@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     country = models.CharField(blank=False,max_length=20)
 
     def __str__(self):
-        return self.profileuser
+        return self.profileuser.username
 
 class InterstedSubjects(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

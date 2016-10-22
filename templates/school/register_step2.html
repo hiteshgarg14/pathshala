@@ -1,0 +1,34 @@
+
+
+    <form  autocomplete="on" method="post" action="{% url 'school:register_step2' %}">
+        {% csrf_token %}
+        <h1> Sign up </h1>
+        <p>
+            <label for="id_phone_no" class="uname" data-icon="u">Your Phone No.</label>
+            <input id="id_phone_no" name="phone_no" required="required" type="text" placeholder="+91XXXXXXXXXX"  />
+        </p>
+        <p>
+            <label for="id_address_line1" class="uname" data-icon="u">Address Line 1</label>
+            <input id="id_address_line1" name="address_line1" required="required" type="text" placeholder=""  />
+        </p>
+        <p>
+            <label for="id_address_line2" class="uname" data-icon="u">Address Line 2</label>
+            <input id="id_address_line2" name="address_line2" required="required" type="text" placeholder=""  />
+        </p>
+        <p>
+            <label for="id_city" class="youmail" data-icon="e" > City</label>
+            <input id="id_city" name="city" required="required"  placeholder="City"  />
+        </p>
+        <p>
+            <label for="id_state" class="youpasswd" data-icon="p">State </label>
+            <input id="id_state" name="state" required="required"  placeholder=""  />
+        </p>
+        <p>
+            <label for="id_country" class="youpasswd" data-icon="p">Country</label>
+            <input id="id_country" name="country" required="required"  placeholder=""  />
+        </p>
+        <p class="signin button">
+            <input type="submit" name="signup" value="Sign up"/>
+        </p>
+
+    </form>

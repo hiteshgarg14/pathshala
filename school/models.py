@@ -10,14 +10,15 @@ class UserProfile(models.Model):
     city = models.CharField(blank=False,max_length=20)
     state = models.CharField(blank=False,max_length=20)
     country = models.CharField(blank=False,max_length=20)
+    avatar = models.ImageField(upload_to='profile_images', blank=True)
 
     def __str__(self):
         return self.profileuser.username
 
-class InterstedSubjects(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+class Standard(models.Model):
+    user = models.ForeignKey(User)
     std = models.CharField(max_length=20)
-
+    sub_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.user
+        return self.user.username

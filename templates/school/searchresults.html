@@ -1,0 +1,28 @@
+{% extends 'school/base.html' %}
+{% load staticfiles %}
+{% block bodycontent %}
+    <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <header>
+        <span style="float:center;"><a href="index.php"><i class="fa fa-arrow-left" style="font-size: 20px;margin-top: 18px;"></i></a></span>
+        <a class="logo" style="margin-left: 500px;" href="index.php">Paathshala</a>
+    </header>
+</nav>
+    	<div style="width:800px;margin:0 auto;margin-top: 10px;padding:100px;background:white;">
+    	<p style="text-align:center; font-size:28px;font-family: 'Courier New',Georgia;">Search Results</p>
+        {% for d in users %}
+        <p style="text-align:center; font-size:28px;font-family: 'Courier New',Georgia;">
+            <a href="#">{{ d.first_name }} {{ d.last_name }}</a>
+        </p><br />
+        {% endfor %}
+        </div>
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+          <div class="container">
+          </div>
+        </nav>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="{% static 'school/js/super-panel.js' %}"></script>
+
+{% endblock %}
